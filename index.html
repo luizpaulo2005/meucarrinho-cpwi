@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body class="min-h-screen min-w-screen bg-gray-50 flex flex-col gap-3 items-center justify-center">
+    <div class="border rounded p-3 flex flex-col gap-2 bg-gray-200 max-w-lg w-full shadow">
+      <span class="text-center text-2xl font-semibold">Meu carrinho</span>
+      <div class="flex gap-3 items-center justify-between">
+        <label for="product_name">Nome do Produto</label>
+        <input
+          type="text"
+          id="product_name"
+          class="rounded-md outline-none px-2 py-1"
+        />
+      </div>
+      <div class="flex gap-3 items-center justify-between">
+        <label for="value">Valor</label>
+        <input
+          type="number"
+          min="0"
+          id="value"
+          class="rounded-md outline-none px-2 py-1"
+        />
+      </div>
+      <div class="flex gap-3 items-center justify-between">
+        <label for="qtd">Quantidade</label>
+        <input
+          type="number"
+          min="0"
+          id="qtd"
+          class="rounded-md outline-none px-2 py-1"
+        />
+      </div>
+      <button
+        class="self-end bg-blue-700 py-1 px-2 rounded-md text-white transition-colors hover:bg-blue-800"
+        id="addBtn"
+      >
+        Cadastrar
+      </button>
+    </div>
+
+    <div class="bg-gray-200 py-2 px-3 rounded-md flex flex-col shadow max-w-lg w-full">
+      <div class="flex justify-between border-b border-dashed border-black">
+        <span>Nota Fiscal</span>
+        <span>19.316.112/0001-84</span>
+      </div>
+      <table class="rounded-md my-2 table-auto divide-y divide-black divide-dashed">
+        <thead>
+          <tr>
+            <th class="text-start">Nome</th>
+            <th>Quantidade</th>
+            <th>Valor (unidade)</th>
+            <th class="text-end">Valor Final</th>
+          </tr>
+        </thead>
+        <tbody id="produtos"></tbody>
+      </table>
+      <p
+        id="finalValue"
+        class="text-end border-t border-dashed border-black"
+      ></p>
+    </div>
+  </body>
+</html>
